@@ -23,22 +23,22 @@ public class Runner {
 
 public class Solution {
 
-	public static int firstIndex(int input[], int x) {
-        return firstIndex(input,0,x);
-	}
-    
-    public static int firstIndex(int input[],int len,int x){
-        if(len>=input.length){
-            return -1;
-        }
-        
-        if(input[len]==x){
-            return len;
-        }
-        
-        int pos=firstIndex(input,len+1,x);
-        
-        return pos;
-    }
 	
+	public static int firstIndex(int input[], int x)
+    
+    {
+        return firstIndex(input, x,0);
+    }
+     public static int firstIndex(int input[], int x, int sI){
+           if(sI>= input.length-1)
+    {
+        return -1;
+    }
+    if(input[sI]==x)
+    {
+        return sI;
+    }
+     return firstIndex(input, x, sI +  1);
+    
+     }
 }
